@@ -1,0 +1,32 @@
+<script type="text/javascript">
+
+  function add(a, b) {
+    return a + b
+  }
+
+  function sayHello(name) {
+    console.log("Hello, " + name);
+  }
+
+  function introduce() {
+    console.log("Hello Everyone!");
+  }
+
+  console.log(add.length);       // 2
+  console.log(sayHello.length);  // 1
+  console.log(introduce.length); // 0
+  
+  /*
+  function.valueOf()
+  等同于 function.toString()
+  返回原封不动的源码
+  */
+  console.log(add.toString());
+  console.log(sayHello.toString());
+  console.log(introduce.toString());
+
+  console.log(add.valueOf());
+  console.log(sayHello.valueOf());
+  console.log(introduce.valueOf());
+
+</script>
