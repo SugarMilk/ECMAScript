@@ -1,0 +1,33 @@
+<script type="text/javascript">
+
+// 变量类型强转
+
+/*
+将变量var强转成boolean类型：
+Boolean(var)
+var为非零数字、非空字符串、对象，强转为true
+var为0、""、null、undefined，强转为false
+*/
+
+// 变量强转数字类型（整数、浮点数）
+console.log("Number(true): " + Number(true)); // 1
+console.log("Number(false): " + Number(false)); // 0
+console.log("Number(null): " + Number(null)); // 0
+console.log("Number(undefined): " + Number(undefined)); // NaN
+console.log("Number(\"red\"): " + Number("red")); // NaN
+console.log("Number(\"0xA\"): " + Number("0xA")); // 10
+console.log("Number(\"12\"): " + Number("12"));  // 12
+console.log("Number(\"1.2\"): " + Number("1.2")); // 1.2
+console.log("Number(\"1.2.3\"): " + Number("1.2.3")); // NaN
+console.log("Number(new Object()): " + Number(new Object())); // NaN
+
+
+var aNull = null
+console.log(String(aNull)); // null
+console.log("null: " + aNull.toString()); // 报错
+
+var aUndefined = undefined
+console.log(String(aUndefined)); // undefined
+console.log("aUndefined: " + aUndefined.toString()); // 报错
+
+</script>

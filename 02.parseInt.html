@@ -1,0 +1,20 @@
+<script type="text/javascript">
+
+var stringCount = "10"
+var stringPrice = "28.8"
+var stringHex = "0xA"
+var stringHexColor = "3366AA"
+var boolResult = false
+
+console.log(parseInt(stringCount)); // 10
+console.log(parseInt(stringPrice)); // 28
+console.log(parseInt(stringHex));   // 10
+console.log(parseInt(stringHexColor)); // 3366
+console.log(parseInt(boolResult));  // NaN
+
+console.log("parseInt(\"10\", 8): " + parseInt("10", 8));    // 8, 将字符串10转换成8进制的数字
+console.log("parseInt(\"010\"): " + parseInt("010"));        // 10
+console.log("parseInt(\"010\", 8): " + parseInt("010", 8));  // 8
+console.log("parseInt(\"010\", 10): " + parseInt("010", 10));// 10
+
+</script>

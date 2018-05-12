@@ -1,0 +1,29 @@
+<script type="text/javascript">
+  console.log("typeof(null) => " + typeof(null)); // object
+
+  var boolResult = false
+  console.log("boolResult: " + boolResult.toString()); // false
+
+  var intCount = 10
+  var floatPrice1 = 10.0
+  var floatPrice2 = 10.1
+  console.log("intCount: " + intCount.toString()); // 10
+  console.log("floatPrice1: " + floatPrice1.toString()); // 10
+  console.log("floatPrice2: " + floatPrice2.toString()); // 10.1
+
+  console.log("intCount转成字符串类型的2进制：" + intCount.toString(2));  // 1010
+  console.log("intCount转成字符串类型的8进制：" + intCount.toString(8));  // 12
+  console.log("intCount转成字符串类型的10进制：" + intCount.toString(10));// 10
+  console.log("intCount转成字符串类型的16进制：" + intCount.toString(16));// a
+
+  var countrys = ["cn", "jp", "ko"]
+  console.log("countrys: " + countrys.toString()); // cn,jp,ko
+
+  var scores = [99, 100, 95, 98]
+  console.log("scores: " + scores.toString()); // 99,100,95,98
+
+  var date = new Date()
+  console.log("date: " + date.toLocaleString()); // 2018/5/12 下午4:44:36
+
+
+</script>
