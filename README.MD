@@ -1,5 +1,9 @@
 ECMAScript
 
+参考网站：
+http://www.w3school.com.cn/js/pro_js_syntax.asp
+https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000
+
 http://www.w3school.com.cn/js/pro_js_value.asp
 http://www.w3school.com.cn/js/pro_js_primitivetypes.asp
 
@@ -12,6 +16,7 @@ typeof(var) == number     => Number
 typeof(var) == string     => String
 typeof(var) == object     => 引用类型或Null
 注意：undefined == null为真，undefined表示声明或定义了变量，但没有赋值，null表示变量不存在
+在实际代码开发中，我们直接使用null判断变量即可！！
 
 ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 Boolean、Number、String和对象均有toString()方法，方便进行类型转换
