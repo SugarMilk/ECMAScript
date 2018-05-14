@@ -1,0 +1,70 @@
+<script type="text/javascript">
+
+  // https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014344993159773a464f34e1724700a6d5dd9e235ceb7c000
+  // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+  // https://segmentfault.com/a/1190000008038703
+
+  'use strict'
+
+  var person = {
+    name: 'xiaoming',
+    age: 20,
+    gender: 'male',
+    passport: 'G-123456',
+    school: 'No.4 middle school'
+  }
+
+  var {name, age, passport} = person
+  console.log(`name=${name}, age=${age}, passport=${passport}`);
+  // name=xiaoming, age=20, passport=G-123456
+
+  var person = {
+    name: 'xiaoming',
+    age: 20,
+    gender: 'male',
+    passport: 'G-123456',
+    school: 'No.4 middle school',
+    address: {
+      city: 'Beijing',
+      street: 'No.1 Road',
+      zipcode: '100001'
+    }
+  }
+
+  var {name, address:{city, zip}} = person
+  console.log(`name=${name}, city=${city}, zip=${zip}`);
+  // xxx:{} 表示xxx所属的{}对象中查找，解构不包含xxx
+  // name=xiaoming, city=Beijing, zip=undefined
+
+  var person = {
+    name: 'xiaoming',
+    age: 20,
+    gender: 'male',
+    passport: 'G-123456',
+    school: 'No.4 middle school'
+  }
+
+  var {name, passport:id} = person
+  console.log(`name=${name}, id=${id}`);
+  // 将passport的值赋值给id，解构不包含passport
+  // name=xiaoming, id=G-123456
+
+  var {name, single=true} = person
+  console.log(`name=${name}, single=${single}`);
+  // 当single属性不存在时，设置默认值为true
+  // name=xiaoming, single=true
+
+  console.log('------------------------------------------------');
+
+  function buildDate({year, month, day, hour=0, minute=0, second=0}) {
+    return new Date(year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second)
+  }
+
+  console.log(buildDate({year: 2018, month: 5, day: 14}));
+  // Mon May 14 2018 00:00:00 GMT+0800 (CST)
+
+  console.log(buildDate({year: 2018, month: 5, day: 14, hour: 11, minute: 30, second: 56}));
+  // Mon May 14 2018 11:30:56 GMT+0800 (CST)
+  
+
+</script>

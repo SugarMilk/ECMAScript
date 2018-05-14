@@ -1,0 +1,54 @@
+<script type="text/javascript">
+  'use strict'
+
+  function count(){
+    var array = []
+
+    for (var i = 1; i <= 3; i++) {
+      // array.push(function(){
+      //   return i * i
+      // })
+
+      array.push(function(n){
+        return function(){
+          return n * n
+        }
+      }(i))
+    }
+
+    return array
+  }
+
+  // f1(), f2(), f3()
+  var result = count()
+  console.log(result);
+
+  /*
+   for循环变量函数内全局变量i == 4
+   数组的三个元素值均为:
+   function() {
+    return i * i
+   }
+   即：
+   function() {
+    return 4 * 4
+   }
+  */
+
+  var f1 = result[0]
+  var f2 = result[1]
+  var f3 = result[2]
+
+  console.log('f1(): ' + f1()); // 16
+  console.log('f2(): ' + f2()); // 16
+  console.log('f3(): ' + f3()); // 16
+
+  // 返回闭包时牢记的一点就是：返回函数不要引用任何循环变量，或者后续会发生变化的变量。
+  // 闭包就是携带状态的函数，并且它的状态可以完全对外隐藏起来。
+
+  
+
+
+
+
+</script>

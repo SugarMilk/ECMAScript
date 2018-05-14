@@ -1,0 +1,33 @@
+<script type="text/javascript">
+  'use strict'
+
+  var xiaoming = {
+    name: '小明',
+    birth: 1990,
+    age: function(){
+      var year = new Date().getFullYear()
+      return year - this.birth
+    }
+  }
+
+  console.log(xiaoming.age());
+
+  var xiaoming = {
+    name: '小明',
+    birth: 1990,
+    age: function(){
+      var that = this
+
+      function getAgeFromBirth(){
+        var year = new Date().getFullYear()
+        return year - that.birth
+      }
+
+      return getAgeFromBirth()
+    }
+  }
+
+  console.log(xiaoming.age());
+
+
+</script>

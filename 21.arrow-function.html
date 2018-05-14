@@ -1,0 +1,46 @@
+<script type="text/javascript">
+  'use strict'
+
+  // =>定义匿名函数
+  var add = (a, b) => a + b
+
+  // 或
+  var add = (a, b) => {
+    return a + b
+  }
+
+  // 等同于
+  var add = function(a, b) {
+    return a + b
+  }
+
+  console.log(add(2, 3));
+
+  // =>与匿名函数不同的是：
+  var object = {
+    birth: 1990,
+    getAge: function(year) {
+      var fn = (y) => {
+        return y - this.birth
+      }
+
+      // http://www.w3school.com.cn/js/pro_js_inheritance_implementing.asp
+      // 由于this在箭头函数中已经按照词法作用域绑定了，<<<<<====
+      // 所以，用call()或者apply()调用箭头函数时，无法对this进行绑定，
+      // 即传入的第一个参数被忽略：
+      return fn.call({birth:2000}, year)
+    }
+  }
+
+  var age = object.getAge(2015)
+  console.log(age);
+
+
+
+
+
+
+
+
+
+</script>

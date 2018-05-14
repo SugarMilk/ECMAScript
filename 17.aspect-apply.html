@@ -1,0 +1,46 @@
+<script type="text/javascript">
+  'use strict'
+
+  // https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014345005399057070809cfaa347dfb7207900cfd116fb000
+  // http://www.w3school.com.cn/js/pro_js_inheritance_implementing.asp
+
+  function getAge() {
+    return new Date().getFullYear() - this.birth
+  }
+
+  var xiaoming = {
+    name: '小明',
+    birth: 1990,
+    age: getAge
+  }
+
+  // 调用方式1：
+  var age1 = xiaoming.age()
+  console.log(`age1: ${age1}`);
+
+  // 调用方式2：
+  // 第一个参数，作用（调用）的对象，无填null
+  // 第二个参数，参数以数组传递给方法，无填null或[]
+  var age2 = getAge.apply(xiaoming)
+  console.log(`age2: ${age2}`);
+
+  console.log('--------------------------------------------');
+
+  // 重写方法，定义一个拦截器
+
+  var count = 0
+  var _parseInt = parseInt
+
+  window.parseInt = function(){
+    count += 1
+    // return _parseInt(arguments)
+    return _parseInt.apply(null, arguments)
+  }
+
+  parseInt('10')
+  parseInt('20')
+  parseInt('30')
+  console.log(count);
+
+
+</script>
