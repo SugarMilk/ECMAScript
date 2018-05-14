@@ -1,0 +1,56 @@
+<script type="text/javascript">
+  'use strict'
+
+  // https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/00143450083887673122b45a4414333ac366c3c935125e7000#0
+  // 不太懂！
+
+  function * fn(){
+    console.log(1)
+    yield           // 函数暂停
+    console.log(2)
+    yield           // 函数暂停
+    console.log(3)
+  }
+
+  var runner_fn = fn()
+  runner_fn.next() // 1，函数执行第一次
+  runner_fn.next() // 2，函数执行第二次
+  runner_fn.next() // 3，函数执行第三次
+  runner_fn.next() // 无，函数执行完毕不再执行
+  runner_fn.next() // 无，函数执行完毕不再执行
+
+  console.log('------------------------------------');
+
+  function * fn(){
+    var a = yield 'hello' // 暂停，并返回 'hello'; 变量 a 等下次执行 next() 时从外部传递过来
+    yield
+    console.log(a);
+  }
+
+  var runner_fn = fn()
+  var result = runner_fn.next()
+  console.log(result); // result = {value: "hello", done: false}
+  var result = runner_fn.next(10) // 支持传递值
+  console.log(result); // result = {value: undefined, done: false}
+  var result = runner_fn.next()
+  console.log(result); // 10, result = {value: undefined, done: true}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

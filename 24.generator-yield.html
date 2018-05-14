@@ -1,0 +1,27 @@
+<script type="text/javascript">
+  'use strict'
+
+  // 通过yield来实现一个伪异步控制流程
+
+  function doAjax(a, b) {
+    ajax('url' + a + b, function(data){
+      iter.next(data)
+    })
+  }
+
+  function* fn(){
+    var data = yield doAjax(a, b)
+    console.log(data);
+  }
+
+  var iter = fn()
+  iter.next()
+
+
+
+
+
+
+
+
+</script>
