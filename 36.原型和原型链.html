@@ -1,0 +1,20 @@
+<script type="text/javascript">
+
+function Animal(){
+
+}
+
+function Dog(){
+
+}
+
+ Animal.price = 2000;
+ Dog.prototype = Animal;
+
+ var tidy = new dog();
+ console.log(Dog.price) //undefined
+ console.log(tidy.price) // 2000
+
+
+
+</script>

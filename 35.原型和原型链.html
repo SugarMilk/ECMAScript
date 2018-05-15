@@ -1,0 +1,24 @@
+<script type="text/javascript">
+
+function Person(name) {
+  this.name = name
+}
+// 重写原型
+Person.prototype = {
+  getName: function() {}
+}
+// Person.prototype.getName = function(){
+//
+// }
+
+var p = new Person('jack')
+console.log(p.__proto__ === Person.prototype) // true
+console.log(p.__proto__ === p.constructor.prototype) // false
+
+console.log(p.constructor); // Object
+
+
+
+
+
+</script>

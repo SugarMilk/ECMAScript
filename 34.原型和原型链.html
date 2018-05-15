@@ -1,0 +1,68 @@
+<script type="text/javascript">
+
+  function Student(name) {
+    this.name = name;
+    this.setAge = function(age){
+      this.age = age
+    }
+
+    // 有别于普通方法，不会直接直接return或yield
+  }
+
+  console.log(typeof(Student)); // function
+  console.log(Student);
+
+  var stu = new Student('Jack')
+  stu.setAge(18)
+  console.log(stu.age); // 18
+  console.log(typeof(stu)); // object
+  console.log('stu: ' + stu);
+
+  /*
+  通过Student构造方法，创建了实例对象stu，
+  实例对象stu的构造者属性constructor为其构造方法Student，
+  */
+  console.log(stu.constructor === Student); // true
+  console.log(Student === Student.prototype.constructor); // true
+
+  /*
+  只有构造方法才有prototype属性
+  */
+
+  /*
+  prototype中文意思就是'原型', 原型主要用来继承（其实就是添加属性或者重写属性了~~!!!）
+  Student.prototype指的是Student具体属性结构，它类似于一个抽象的实例对象!
+  Student.prototype.constructor指的是Student构造方法实现本身
+  */
+
+  /*
+  https://upload-images.jianshu.io/upload_images/1430985-b650bc438f236877.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/700
+  */
+
+  // https://www.jianshu.com/p/652991a67186
+
+  console.log(stu.__proto__ === Student.prototype); // true!!!
+
+  console.log(Student.__proto__ === Function.prototype); // true
+  console.log(Student.constructor === Function); // true
+
+  console.log(Student.prototype.__proto__ ===  Object.prototype); // true
+
+  // 所有的构造器都来自于Function.prototype，甚至包括根构造器Object及Function自身
+  console.log(Object.__proto__ === Function.prototype); // true
+  console.log(Object.prototype); // 输出对象的基本属性
+  console.log(Object.prototype.__proto__); // null，原型链最顶端
+
+
+  /*
+  prototype 是保存着它们所有实例方法的真正所在。
+  换句话所说，诸如 toString()和 valuseOf() 等方法实际上都保存在  prototype 名下，
+  只不过是通过各自对象的实例访问罢了。
+  */
+
+  var props = Array.prototype
+  console.log(props);
+  console.log(Object.getOwnPropertyNames(props));
+
+
+</script>
