@@ -6,6 +6,7 @@ https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3
 http://es6.ruanyifeng.com/
 https://developer.mozilla.org/zh-CN/docs/Learn
 https://msdn.microsoft.com/zh-cn/library/d1et7k7c(v=vs.94).aspx
+http://javascript.info/string
 
 http://www.w3school.com.cn/js/pro_js_value.asp
 http://www.w3school.com.cn/js/pro_js_primitivetypes.asp

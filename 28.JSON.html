@@ -1,0 +1,49 @@
+<script type="text/javascript">
+
+  var person = {
+    name: '小明',
+    age: 14,
+    gender: true,
+    height: 1.65,
+    skills: ['js', 'py', 'rb']
+  }
+
+  var string = JSON.stringify(person)
+  console.log(string);
+  // {"name":"小明","age":14,"gender":true,"height":1.65,"skills":["js","py","rb"]}
+
+  // 第二个参数，用于筛选出指定键值
+  var string = JSON.stringify(person, null, '  ')
+  console.log(string);
+
+  /*
+  加入缩进等格式
+  {
+    "name": "小明",
+    "age": 14,
+    "gender": true,
+    "height": 1.65,
+    "skills": [
+      "js",
+      "py",
+      "rb"
+    ]
+  }
+  */
+
+  var string = JSON.stringify(person, ['name', 'age'], '  ')
+  console.log(string);
+
+  /*
+  {
+  "name": "小明",
+  "age": 14
+  }
+  */
+
+
+
+
+
+
+</script>

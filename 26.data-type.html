@@ -1,0 +1,50 @@
+<script type="text/javascript">
+
+  // typeof(NaN) == "number"
+
+  // https://blog.csdn.net/likeuzi/article/details/61417879
+  // 判断变量是否为数组 Array.isArray(var)
+  var data1 = [1, 2, 3]
+  var data2 = {name:'xiaoming', age: 18}
+  console.log(Array.isArray(data1)); // true
+  console.log(Array.isArray(data2)); // false
+  console.log('------------------');
+
+  var date = new Date()
+  console.log(date.toString()); // Tue May 15 2018 09:20:01 GMT+0800 (CST)
+  console.log(date.toLocaleString()); // 2018/5/15 上午9:21:41
+  console.log(date.toUTCString()); // Tue, 15 May 2018 01:21:57 GMT
+  console.log(date.getMonth()); // 4, 月份从0开始计
+  console.log(date.getDate());  // 15, 日份
+  console.log(date.getDay());   // 2, 星期
+
+  /*
+  时间戳是个什么东西？时间戳是一个自增的整数，它表示从1970年1月1日零时整的GMT时区开始的那一刻，到现在的毫秒数。
+  假设浏览器所在电脑的时间是准确的，那么世界上无论哪个时区的电脑，它们此刻产生的时间戳数字都是一样的，
+  所以，时间戳可以精确地表示一个时刻，并且与时区无关。
+  所以，我们只需要传递时间戳，或者把时间戳从数据库里读出来，再让JavaScript自动转换为当地时间就可以了。
+  */
+
+  // 获取时间戳，毫秒数
+  if (Date.now) {
+    console.log(Date.now()); // 老版本IE没有now()方法
+  } else {
+    console.log(new Date().getTime());
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

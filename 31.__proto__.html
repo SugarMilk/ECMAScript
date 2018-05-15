@@ -1,0 +1,28 @@
+<script type="text/javascript">
+
+  var Student = {
+    name: 'Robot',
+    height: 1.8,
+    run: function() {
+      console.log(this.name + ' is running...');
+    }
+  }
+
+  var xiaoming = {
+    name: '小明'
+  }
+
+  xiaoming.__proto__ = Student // xiaoming继承自Student，不推荐仅演示
+
+  console.log(xiaoming.name); // 小明
+  console.log(xiaoming.height); // 1.8
+  xiaoming.run(); // 小明 is running...
+
+
+
+
+
+
+
+
+</script>
