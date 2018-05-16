@@ -1,0 +1,61 @@
+<script type="text/javascript">
+
+  //  ES5
+  // function Student(name) {
+  //   this.name = name
+  // }
+  //
+  // Student.prototype.hello = function(){
+  //   alert(`Hello ${this.name} !`)
+  // }
+
+  // ES6
+  class Student {
+    constructor(name) {
+      this.name = name
+    }
+
+    hello(){
+      alert(`Hello ${this.name} !`)
+    }
+  }
+
+  // var xiaoming = new Student('小明')
+  // xiaoming.hello()
+
+  // PrimaryStudent继承自Student
+  class PrimaryStudent extends Student {
+    constructor(name, grade) {
+      super(name) // 通过super(name)来调用父类的构造函数，否则父类的name属性无法正常初始化
+      this.grade = grade
+    }
+
+    myGrade(){
+      alert(`I am at grade ${this.grade}`)
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

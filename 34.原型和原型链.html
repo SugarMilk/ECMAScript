@@ -53,6 +53,12 @@
   console.log(Object.prototype); // 输出对象的基本属性
   console.log(Object.prototype.__proto__); // null，原型链最顶端
 
+  console.log(Object.getPrototypeOf(stu) == Student.prototype); // true
+  console.log(stu instanceof Student); // true
+
+  // Student.prototype即表示类Student的原型链
+  // 类Student的原型链包含它的构造方法（创建实例）constructor
+  // Student和Student.prototype.constructor等同，表示Student的构造方法
 
   /*
   prototype 是保存着它们所有实例方法的真正所在。
