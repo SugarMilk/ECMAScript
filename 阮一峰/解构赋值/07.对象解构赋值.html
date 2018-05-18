@@ -1,0 +1,31 @@
+<script type="text/javascript">
+
+  let obj = {};
+  let arr = [];
+
+  ({foo: obj.prop, bar: arr[0]} = {foo: 100, bar: true}); // 为什么一定要加上()
+  console.log(`obj = ${obj}`); // {prop:123}
+  console.log(`arr = ${arr}`); // arr = true
+
+  // 设置默认值
+  let {a = 1} = {};
+  console.log(`a = ${a}`); // a = 1
+
+  let {b: c = 3} = {};
+  console.log(`c = ${c}`); // c = 3
+
+  let {e: f = 5} = {e: 7};
+  console.log(`f = ${f}`); // f = 7
+
+  let {g = 10} = {undefined};
+  console.log(`g = ${g}`); // g = 10
+
+  let {h = 10} = {h: null};
+  console.log(`h = ${h}`); // h = null
+
+  let {name} = {age: 10};
+  // 如果解构失败，变量的值等于undefined
+  console.log(`name = ${name}`); // name = undefined
+
+
+</script>

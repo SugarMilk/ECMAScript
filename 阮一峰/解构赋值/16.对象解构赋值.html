@@ -1,0 +1,30 @@
+<script type="text/javascript">
+
+  let map = new Map();
+  map.set('first', 'hello');
+  map.set('second', 'world');
+
+  /*
+  first is hello
+  second is world
+  */
+
+  for (let [key, value] of map) {
+    console.log(`${key} is ${value}`);
+  }
+
+  // 只获取键名
+  for (let [key] of map) {
+
+  }
+
+  // 只获取键的值
+  for (let [, value] of map) {
+
+  }
+
+  // 加载模块指定方法
+  const {ToolA, ToolB} = require('ToolBox');
+
+
+</script>

@@ -1,0 +1,14 @@
+<script type="text/javascript">
+
+  // 设置默认值
+  let [result = true] = [];
+  console.log(`result = ${result}`); // true
+
+  let [name, age = 1] = ["baby"]
+  console.log(`name = ${name}, age = ${age}`); // name = baby, age = 1
+
+  let [color, width = 10, height = 20] = ["red", undefined, null]
+  // color = red, width = 10, height = null
+  console.log(`color = ${color}, width = ${width}, height = ${height}`);
+  
+</script>

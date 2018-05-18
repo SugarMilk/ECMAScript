@@ -1,0 +1,29 @@
+<script type="text/javascript">
+
+  /*
+  let foo = 'outer';
+
+  function bar(func = () => foo){
+    let foo = 'inner';
+    console.log(func());
+  }
+  */
+
+  let foo = 'outer';
+
+  function defaultFunc(){
+    return foo;
+  }
+
+  function bar(func = defaultFunc){
+    let foo = 'inner';
+    console.log(func());
+  }
+
+  bar(); // outer
+
+
+
+
+
+</script>

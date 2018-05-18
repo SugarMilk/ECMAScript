@@ -1,0 +1,23 @@
+<script type="text/javascript">
+
+  for (var x = 0; x < 10; x++) {
+
+  }
+  console.log(`x = ${x}`);
+
+  for (let y = 0; y < 10; y++) {
+
+  }
+  console.log(`y = ${y}`); // Uncaught ReferenceError: y is not defined
+
+  /*
+  var声明的变量全局有效
+  let声明的变量只在它所在的代码块中有效
+
+  凡是在let, const声明之前就使用这些变量，就会报错ReferenceError
+  */
+
+
+
+
+</script>

@@ -1,0 +1,26 @@
+<script type="text/javascript">
+
+  // 利用...克隆（不同地址）数组
+  let array1 = [1, 2];
+  let array2 = [...array1];
+  array2[0] = 3;
+  console.log(`array1 = ${array1}`); // 1,2
+  console.log(`array2 = ${array2}`); // 3,2
+
+
+  // 合并数组
+  let more = [3, 4];
+  let array_more = [1, 2, ...more];
+  console.log(`array_more = ${array_more}`); // 1,2,3,4
+
+  // 多个数组合并
+  let a1 = [1, 2];
+  let a2 = [3, 4];
+  let a3 = [5, 6];
+  let multiArray = [...a1, ...a2, ...a3];
+  console.log(`multiArray = ${multiArray}`); // 1,2,3,4,5,6
+
+  
+
+
+</script>

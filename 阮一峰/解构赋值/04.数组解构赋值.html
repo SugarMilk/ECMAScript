@@ -1,0 +1,23 @@
+<script type="text/javascript">
+
+  let a = 2;
+  let b = 3;
+  [a, b] = [b, a + b];
+  // 解构赋值从左到右，从第一个到最后一个依次赋值
+  console.log(`a = ${a}, b = ${b}`); // a = 3, b = 5
+
+
+  function* fibs(){
+    let a = 0;
+    let b = 1;
+    while (true) {
+      yield a;
+      [a, b] = [b, a + b];
+    }
+  }
+
+  let [first, second, third, fourth, fifth, sixth] = fibs();
+  console.log(`sixth = ${sixth}`); // sixth = 5
+
+
+</script>

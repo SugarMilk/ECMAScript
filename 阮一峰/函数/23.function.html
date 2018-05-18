@@ -1,0 +1,27 @@
+<script type="text/javascript">
+
+  function func(x, y) {
+    /*
+    如果不传递参数，相当于仅仅是：
+    let x = undefined;
+    let y = undefined;
+    */
+    console.log(x, y);
+  }
+
+  try {
+    func();  // undefined undefined
+    func(2); // undefined 2
+    // 错误的传递方法，传递参数不能直接用空,
+    // 这是语法错误： Uncaught SyntaxError: Unexpected token ,
+    // func(, 3);
+    func(null, 3); // null 3
+    func(undefined, 3); // undefined 3
+  } catch (err) {
+    console.log(err);
+  }
+
+  
+
+
+</script>

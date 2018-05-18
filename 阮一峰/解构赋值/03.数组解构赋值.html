@@ -1,0 +1,54 @@
+<script type="text/javascript">
+
+  /*
+  ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这称之为解构赋值
+  */
+
+  // let a = 1
+  // let b = 2
+  // let c = 3
+
+  // 模式匹配：只要等号两边的模式相同，左边的变量就会被赋予对应的值
+  // 模式匹配的两边必须都是可遍历的数据集合(迭代器)
+  let [a, b, c] = [1, 2, 3]
+  console.log(`a = ${a}, b = ${b}, c = ${c}`); // a = 1, b = 2, c = 3
+
+  let [e, [[f], g]] = [5, [[6], 7]]
+  console.log(`e = ${e}, f = ${f}, g = ${g}`); // e = 5, f = 6, g = 7
+
+  // 不完全解构，如果解构不成功，变量的值就等于undefined
+  let [ , , h] = [ , , 9]
+  console.log(`h = ${h}`); // h = 9
+
+  let [r, , t] = [1, 2, 3]
+  console.log(`r = ${r}, t = ${t}`); // r = 1, t = 3
+
+  let [main, ...other] = [1, 2, 3, 4]
+  // ...other表示剩余所有变量、参数，other是一个数组
+  // main = 1, other = 2,3,4, typeof other = object
+  console.log(`main = ${main}, other = ${other}, typeof other = ${typeof other}`);
+
+  let [x, y, ...z] = [1]
+  // 数组有length属性，字典没有length属性
+  // x = 1, y = undefined, z = , z.length = 0
+  console.log(`x = ${x}, y = ${y}, z = ${z}, z.length = ${z.length}`);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

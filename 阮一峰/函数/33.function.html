@@ -1,0 +1,21 @@
+<script type="text/javascript">
+
+  // http://es6.ruanyifeng.com/#docs/function#双冒号运算符
+
+  // ::双冒号运算符，运行就报错，什么鬼
+  // bind方法
+
+  const hasOwnProperty = Object.prototype.hasOwnProperty;
+  function hasOwn(obj, key) {
+    return obj::hasOwnProperty(key);
+  }
+
+  console.log(hasOwn('123', 'length'));
+
+
+
+
+
+
+
+</script>

@@ -1,0 +1,31 @@
+<script type="text/javascript">
+
+  function func({x, y = 5} = {}){
+    /*
+    当传递的参数是一个对象时，相当于设置了默认值：
+    let x = undefined;
+    let y = 5;
+    当不传参数，默认传递{}:
+    let x = undefined;
+    let y = 5;
+    */
+    console.log(x, y);
+  }
+
+  try {
+    func({x: 1, y: 2}); // 1 2
+    func({x: 1});       // 1 5
+    func({});  // undefined 5
+    func();    // undefined 5
+  } catch (err) {
+    console.log(err);
+  }
+
+
+
+
+
+
+
+
+</script>

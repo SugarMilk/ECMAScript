@@ -1,0 +1,31 @@
+<script type="text/javascript">
+
+  // 深入理解函数作用域
+  // http://es6.ruanyifeng.com/#docs/function#作用域
+  // 难理解
+
+  var x = 1;
+  function foo(x, y = function(){x = 2;}) {
+    var x = 3;
+    y();
+    console.log(x);
+  }
+  foo(); // 3
+  x; // 1
+
+
+
+  var x = 1;
+  function foo(x, y = function() { x = 2; }) {
+    x = 3;
+    y();
+    console.log(x);
+  }
+
+  foo() // 2
+  x // 1
+
+
+
+
+</script>

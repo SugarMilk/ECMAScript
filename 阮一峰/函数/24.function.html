@@ -1,0 +1,15 @@
+<script type="text/javascript">
+
+  function func(x = 5, y = 6) {
+    console.log(x, y);
+  }
+
+  func(undefined, null); // 5 null
+
+  /*
+  如果函数参数（包括解构赋值）时传入undefined，将触发该参数等于默认值，null则没有这个效果。
+  */
+
+
+
+</script>

@@ -1,0 +1,25 @@
+<script type="text/javascript">
+
+  function handleRequiredParameter(){
+    throw new Error('Miss parameter')
+  }
+
+  /*
+  利用参数默认值，既可以使得参数初始化一个默认值，也可以使得参数必须传递
+  */
+  function hello(required = handleRequiredParameter()){
+    console.log(`Hello ${required} !`);
+  }
+
+  try {
+    hello('hj');
+    hello();
+  } catch (err) {
+    console.log(err);
+  }
+
+
+
+
+
+</script>

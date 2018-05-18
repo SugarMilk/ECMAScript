@@ -1,0 +1,29 @@
+<script type="text/javascript">
+
+  // 提取JSON对象的数据
+  let data = {
+    code: 200,
+    msg: "query success",
+    obj: [92, 98]
+  };
+
+  let {code, msg, obj:scores} = data;
+  // code = 200, msg = query success, scores = 92,98
+  console.log(`code = ${code}, msg = ${msg}, scores = ${scores}`);
+
+  // 设置函数参数的默认值
+  jQuery.ajax = function(url, {
+    async = true,
+    beforeSend = function(){},
+    cache = true,
+    complete = function(){},
+    crossDomain = false,
+    global = true,
+    // ... other config
+  } = {}){
+    // implement body....
+  };
+
+
+
+</script>

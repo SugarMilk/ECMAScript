@@ -1,0 +1,48 @@
+<script type="text/javascript">
+
+  /*
+  对象的解构与数组有一个重要的不同。
+  数组的元素是按次序排列的，变量的取值由它的位置决定；
+  而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。
+  */
+  let {uid, name} = {uid: 1000, name: 'cici'}
+  console.log(`uid = ${uid}, name = ${name}`); // uid = 1000, name = cici
+
+  let {c} = {a: 1, b:2}
+  console.log(`c = ${c}`); // c = undefined
+
+  let { foo:_foo, bar:_bar } = { foo: "a", bar: "b" };
+  // 内部机制：对象的解构赋值的内部机制，是先找到同名属性，然后再赋给对应的变量。真正被赋值的是后者，而不是前者。
+  // 即：定义声明的变量是_foo，foo仅仅是匹配的模式
+  //    根据匹配模式foo先取到对应的值，再将该值赋值给变量_foo
+  // _foo = a, _bar = b
+  console.log(`_foo = ${_foo}, _bar = ${_bar}`);
+
+  // 嵌套
+  let obj = {
+    p: [
+      'Hello',
+      {y: 'World'}
+    ]
+  }
+
+  let {p: [x, {y}]} = obj;
+  console.log(`x = ${x}, y = ${y}`); // x = Hello, y = World
+
+
+  const node = {
+    loc: {
+      start: {
+        line: 1,
+        column: 5
+      }
+    }
+  }
+
+  let {loc, loc:{start}, loc:{start:{line}}} = node;
+  console.log(`line = ${line}`);  // line = 1
+  console.log(`start = ${start}`);// Object {line: 1, column: 5}
+  console.log(`loc = ${loc}`);    // Object {start: Object}
+  
+
+</script>

@@ -1,0 +1,53 @@
+<script type="text/javascript">
+
+  // 函数参数解构赋值
+  function add([x, y]){
+    return x + y;
+  }
+
+  console.log(add([1, 2])); // 3
+
+  var map = [[1, 2], [3, 4]].map(([a, b]) => a + b);
+  console.log(map); // [3, 7]
+  console.log('----------------------------------------');
+
+  // {x = 0, y = 0} = {}这是什么操作
+  // 左边的才有效？右边的无意义？
+  function move({x = 0, y = 0} = {}) {
+    return [x, y];
+  }
+
+  console.log('move: ' + move({x: 2, y: 3})); // [2, 3]
+  console.log('move: ' + move({x: 2})); // [2, 0]
+  console.log('move: ' + move({})); // [0, 0]
+  console.log('move: ' + move()); // [0, 0]
+
+  // 为函数move的参数指定默认值，而不是为变量x和y指定默认值？不懂
+  function jump({x, y} = {x: 0, y: 0}){
+    return [x, y];
+  }
+
+  console.log('jump: ' + jump({x:5, y:6})); // [5, 6]
+  console.log('jump: ' + jump({x:5})); // [5, undefined]
+  console.log('jump: ' + jump({})); // [undefined, undefined]
+  console.log('jump: ' + jump()); // [0, 0]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

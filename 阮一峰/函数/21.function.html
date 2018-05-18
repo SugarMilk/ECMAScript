@@ -1,0 +1,45 @@
+<script type="text/javascript">
+
+  let x;
+  let y;
+
+  ({x = 0, y = 0} = {});
+
+  console.log(`x = ${x}, y = ${y}`); // x = 0, y = 0
+
+
+
+  function func({x = 0, y = 0} = {}){
+    /*
+    当传递的参数是一个对象时，相当于设置了默认值：
+    let x = 0;
+    let y = 0;
+    当不传参数，默认传递{}:
+    let x = 0;
+    let y = 0;
+    */
+    console.log(x, y);
+  }
+
+  try {
+    func({x: 1, y: 2}); // 1 2
+    func({x: 1});       // 1 0
+    func({});  // 0 0
+    func();    // 0 0
+  } catch (err) {
+    console.log(err);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

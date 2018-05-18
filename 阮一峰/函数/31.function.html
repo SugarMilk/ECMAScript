@@ -1,0 +1,44 @@
+<script type="text/javascript">
+
+  /*
+  ...rest只能位于函数参数的最后一个位置，且不计在函数length属性中
+  */
+
+  function say() {
+
+  }
+  // 根据函数的name属性，获取函数名，返回字符串
+  console.log(say.name); // say
+
+  /*
+  bind返回的函数，name属性值会加上bound前缀。
+
+  function foo() {};
+  foo.bind({}).name // "bound foo"
+
+  (function(){}).bind({}).name // "bound "
+  */
+
+  /*
+  {}既有可能是对象，也有可能是代码块
+  为防止对象{}被当成代码块，可以()包裹起来，表示为一个表达式
+  */
+
+  var sum = (a, b) => (a + b);
+  console.log(`sum = ${sum(2, 3)}`); // sum = 5
+
+  var hello = () => void(console.log('Hello'));
+  hello(); // 不带返回值，Hello
+  
+
+
+
+
+
+
+
+
+
+
+
+</script>

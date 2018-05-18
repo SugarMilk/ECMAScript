@@ -1,0 +1,15 @@
+<script type="text/javascript">
+
+  // 如果解构模式是嵌套的对象，而且子对象所在的父属性不存在，那么将会报错
+  // 因为foo这时等于undefined，再取子属性就会报错
+  // Uncaught TypeError: Cannot destructure property `b` of 'undefined' or 'null'.
+  // let {a: {b}} = {b: 1};
+  // console.log(`b = ${b}`);
+
+
+  // 同理：Uncaught TypeError: Cannot read property 'lanuages' of undefined
+  let person = {name: 'xiaoming'}
+  console.log(`person.skills.lanuages: ${person.skills.lanuages}`);
+
+
+</script>
