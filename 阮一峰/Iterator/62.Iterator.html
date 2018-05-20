@@ -1,0 +1,23 @@
+<script type="text/javascript">
+
+// 下面是一个模拟next方法返回值的例子
+
+function makeIterator(array){
+  let nextIndex = 0;
+  return ({
+    next: function(){
+      if (nextIndex < array.length) {
+        return {value: array[nextIndex++], done: false};
+      }
+      return {value: undefined, done: true};
+    }
+  });
+}
+
+let data = makeIterator(["a", "b"]);
+console.log(data.next()); // { value: "a", done: false }
+console.log(data.next()); // { value: "b", done: false }
+console.log(data.next()); // { value: undefined, done: true }
+
+
+</script>

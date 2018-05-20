@@ -1,0 +1,25 @@
+<script type="text/javascript">
+
+function * funcA(){
+  yield 1;
+  yield 2;
+}
+
+function * funcB(){
+  yield 3;
+  funcA();
+  yield 4;
+}
+
+for (let v of funcB()) {
+  console.log(v);
+}
+
+// 3
+// 4
+
+// 如果在 Generator 函数内部，调用另一个 Generator 函数，默认情况下是没有效果的。
+// 这个就需要用到yield*表达式，用来在一个 Generator 函数里面执行另一个 Generator 函数。
+
+
+</script>

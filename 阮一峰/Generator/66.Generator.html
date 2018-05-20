@@ -1,0 +1,35 @@
+<script type="text/javascript">
+
+function * funcA(){
+  yield 1;
+  yield 2;
+}
+
+function * funcB(){
+  yield 3;
+
+  yield * funcA();
+
+/*
+等同于：
+  for (let v of funcA()) {
+    yield v;
+  }
+*/
+
+  yield 4;
+}
+
+for (let v of funcB()) {
+  console.log(v);
+}
+
+// 3
+// 1
+// 2
+// 4
+
+
+
+
+</script>
