@@ -1,0 +1,33 @@
+<script type="text/javascript">
+
+class Point {
+
+}
+
+class ColorPoint extends Point {
+  constructor(){
+    // 不调用父类方法，报错：ReferenceError: Must call super constructor -
+    // in derived class before accessing 'this' or returning from derived constructor
+
+    // 子类必须在constructor方法中调用super方法，否则新建实例时会报错。
+    // 这是因为子类自己的this对象，必须先通过父类的构造函数完成塑造，得到与父类同样的实例属性和方法，然后再对其进行加工，
+    // 加上子类自己的实例属性和方法。如果不调用super方法，子类就得不到this对象。
+
+    super();
+  }
+}
+
+let cp = new ColorPoint();
+
+
+// 支持多继承？不支持
+
+
+
+
+
+
+
+
+
+</script>

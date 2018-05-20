@@ -1,0 +1,32 @@
+<script type="text/javascript">
+
+// 修饰器不仅可以修饰类，还可以修饰类的属性。
+
+function readonly(target, name, descriptor){
+  // descriptor对象原来的值如下
+  // {
+  //   value: specifiedFunction,
+  //   enumerable: false,
+  //   configurable: true,
+  //   writable: true
+  // };
+  descriptor.writable = false;
+  return descriptor;
+}
+
+class Person {
+  @readonly
+  name(){
+    return "hj";
+  }
+}
+
+// readonly(Person.prototype, 'name', descriptor);
+
+let p = new Person();
+p.name;
+
+// 没太明白
+
+
+</script>
