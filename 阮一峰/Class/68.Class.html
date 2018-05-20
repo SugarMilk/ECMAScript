@@ -1,11 +1,30 @@
 <script type="text/javascript">
 
+'use strict';
 
+class Point{
+  constructor(x, y){ // 构造（初始化）方法，类似OC里面的init/initWithCoder/initWithFrame/initWithXXX
+    this.x = x;
+    this.y = y;
+  }
 
+  toString(){
+    return `(${this.x}, ${this.y})`;
+  }
+}
 
+Object.assign(Point.prototype, { // 给原有类添加(重载、替换)属性方法，类型OC里面的分类Category
+  toString(){
+    return `[${this.x}, ${this.y}]`;
+  },
+  toValue(){
+    console.log('toValue...');
+  }
+});
 
-
-
-
+let p = new Point(10, 15);
+console.log(p.toString());
+console.log(p.__proto__ == Point.prototype); // true
+console.log(Point.name); // "Point"
 
 </script>

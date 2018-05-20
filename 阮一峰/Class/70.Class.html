@@ -1,0 +1,27 @@
+<script type="text/javascript">
+
+// 与 ES5 一样，在“类”的内部可以使用get和set关键字，对某个属性设置存值函数和取值函数，拦截该属性的存取行为。
+// set和get方法针对是属性
+
+class Person{
+  get name() {
+    console.log(`get name`);
+  }
+  set name(value){
+    // this.name = value; // 错误，循环调用自己！
+    console.log(`set name: ${value}`);
+  }
+  get age(){
+    return this._age();
+  }
+  set age(value){
+    this._age = value;
+  }
+}
+
+let person = new Person();
+person.name = "hj";
+person.name;
+
+
+</script>
