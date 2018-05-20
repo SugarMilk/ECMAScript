@@ -1,0 +1,15 @@
+<script type="text/javascript">
+
+function timeout(ms){
+  return new Promise(function(resolve, reject){
+    setTimeout(resolve, ms, 'Time Out Done!');
+  })
+};
+
+timeout(2000).then(function(value){
+  console.log(value); // 2s后，控制台输出 "Time Out Done!"
+});
+
+
+
+</script>

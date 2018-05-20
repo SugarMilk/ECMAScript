@@ -1,0 +1,27 @@
+<script type="text/javascript">
+
+/*
+
+try {
+  Object.defineProperty(target, property, attributes);
+  // success
+} catch (e) {
+  // failure
+}
+
+if (Reflect.defineProperty(target, property, attributes)) {
+  // success
+} else {
+  // failure
+}
+
+*/
+
+
+// 将命令（表达）式，变成函数行为
+console.log('assign' in Object); // true
+console.log(Reflect.has(Object, 'assign')); // true
+
+
+
+</script>
