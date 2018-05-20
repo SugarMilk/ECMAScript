@@ -1,0 +1,25 @@
+<script type="text/javascript">
+
+// 消除魔术字符串, (数值枚举或字符串枚举)
+
+function getArea(shape, options) {
+  let area = 0;
+
+  switch (shape) {
+    case 'square':
+      area = options.width * options.height;
+      break;
+    default:
+
+  }
+
+  return area;
+}
+
+getArea('square', {width: 100, height: 200});
+
+/*
+以上代码'square'需要维护并且会多次使用到
+*/
+
+</script>

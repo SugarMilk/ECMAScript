@@ -1,0 +1,74 @@
+<script type="text/javascript">
+
+  var parameter = {
+    optional(data){
+      return data;
+    },
+
+    required(){
+      throw 'miss parameter.';
+    },
+
+    optionalString(data, strings){
+      // optionalString(data, ["item1", "item2", "item3"]);
+    },
+
+    optionalNumber(data, numbers){
+      // optionalNumber(data, [item1, item2, item3]);
+    },
+
+    requiredObject(data){
+      if (typeof data !== 'object') {
+        throw `${data}  must be a object value.`;
+      }
+    },
+
+    requiredString(data){
+      if (typeof data !== 'string') {
+        throw `${data}  must be a string value.`;
+      }
+    },
+
+    requiredNumber(data){
+      if (typeof data !== 'number') {
+        throw `${data}  must be a number value.`;
+      }
+    },
+
+    requiredBoolean(data){
+      if (typeof data !== 'boolean') {
+        throw `${data}  must be a boolean value.`;
+      }
+    },
+  }
+
+
+  var person = {name:'xx', age: 10};
+
+  function hasKey (
+    obj=parameter.required(),
+    key=parameter.required()
+  ) {
+    parameter.requiredObject(obj);
+    parameter.requiredString(key);
+
+
+    return (key in object);
+  }
+
+  hasKey({});
+
+
+  // 各种遍历方法的区别？
+
+
+
+
+
+
+
+
+
+
+
+</script>

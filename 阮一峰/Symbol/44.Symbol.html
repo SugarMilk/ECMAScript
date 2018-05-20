@@ -1,0 +1,19 @@
+<script type="text/javascript">
+
+  let sName = Symbol('sName');
+
+  let person = {
+    [sName]: 'xiaoming'
+  }
+
+  console.log(person.sName); // undefined
+  console.log(person[sName]); // xiaoming
+  console.log(person['sName']); // undefined
+
+  /*
+  Symbol值无论存取均使用中括号[]进行操作，不能使用其他诸如点语法
+  */
+
+
+
+</script>

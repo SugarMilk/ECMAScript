@@ -1,0 +1,25 @@
+<script type="text/javascript">
+
+  let obj1 = {a: {b: 1}};
+  let obj2 = Object.assign({}, obj1);
+
+  obj2.a.b = 2;
+  console.log(obj1.a.b); // 2
+
+  let obj = { foo: 123 };
+  var desc = Object.getOwnPropertyDescriptor(obj, 'foo');
+  console.log(desc); // {value: 123, writable: true, enumerable: true, configurable: true}
+
+  // 定义变量只读
+  var xiaoming = {};
+  Object.defineProperty(xiaoming, "age", {
+    value : 18,
+    writable : false
+  });
+  console.log(xiaoming.age);
+
+  xiaoming.age = 100;
+  console.log(xiaoming.age);
+
+
+</script>

@@ -1,0 +1,39 @@
+<script type="text/javascript">
+
+  // Symbol解决对象属性名冲突
+  // 传入字符串，方便区分
+
+  let s1 = Symbol('description1');
+  let s2 = Symbol('description2');
+
+  // 不能直接使用:
+  // 模板字符串输出Symbol变量；
+  // 字符串拼接等运算；
+  // TypeError: Cannot convert a Symbol value to a string
+  // console.log(`s1: ${s1}`);
+  // console.log('s1 = ' + s1);
+
+  console.log(s1); // Symbol(description1)
+  console.log(s2); // Symbol(description2)
+
+  console.log(s1.toString()); // "Symbol(description1)"
+  console.log(s2.toString()); // "Symbol(description2)"
+
+  let obj = {
+    toString(){
+      return 'abc';
+    }
+  }
+
+  // 传入对象，获取对象的toString值作为实际参数传递
+  let s3 = Symbol(obj);
+  console.log(s3, s3.length); // Symbol(abc) undefined
+
+  let s4 = Symbol();
+  let s5 = Symbol();
+  console.log(s4, s5, s4 == s5); // Symbol() Symbol() false
+
+  // Symbol是一种特殊的字符串，只有toString()方法可用，用于表示对象的某个属性名
+
+
+</script>

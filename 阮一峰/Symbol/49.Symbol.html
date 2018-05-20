@@ -1,0 +1,13 @@
+<script type="text/javascript">
+
+const x = {};
+x[Symbol.replace] = (...s) => console.log(s);
+
+'Hello'.replace(x, 'World') // ["Hello", "World"]
+
+
+
+
+
+
+</script>

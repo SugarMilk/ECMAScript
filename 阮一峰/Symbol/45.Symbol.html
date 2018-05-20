@@ -1,0 +1,22 @@
+<script type="text/javascript">
+
+// Symbol 类型还可以用于定义一组常量，保证这组常量的值都是不相等的。
+
+log.levels = {
+  INFO: Symbol('INFO'),
+  WARN: Symbol('WARN'),
+  DEBUG: Symbol('DEBUG'),
+  RELEASE: Symbol('RELEASE')
+}
+
+log(log.levels.INFO, 'info message');
+log(log.levels.DEBUG, 'debug message');
+
+/*
+常量使用 Symbol 值最大的好处，就是其他任何值都不可能有相同的值了，因此可以保证上面的switch语句会按设计的方式工作。
+
+还有一点需要注意，Symbol 值作为属性名时，该属性还是公开属性，不是私有属性。
+*/
+
+
+</script>
